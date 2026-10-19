@@ -1,0 +1,10 @@
+# Configuración mínima para la CLI de Supabase.
+# Meta no manda un JWT de Supabase, por eso el webhook va sin verificación de JWT
+# (la seguridad la dan el verify token y, opcionalmente, la firma con WHATSAPP_APP_SECRET).
+project_id = "vendi"
+
+[functions.whatsapp-webhook]
+verify_jwt = false
+
+[functions.whatsapp-enviar]
+verify_jwt = true

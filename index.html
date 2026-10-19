@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vendi · asistente para tu negocio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Login ===== -->
+  <div id="login" class="pantalla-login">
+    <form id="formLogin" class="tarjeta-login">
+      <h1>vendi</h1>
+      <p class="sub">Entra para ver los pedidos de tu negocio</p>
+      <label class="campo"><span>Correo</span>
+        <input id="correo" type="email" autocomplete="username" placeholder="tucorreo@ejemplo.com" required />
+      </label>
+      <label class="campo"><span>Contraseña</span>
+        <input id="clave" type="password" autocomplete="current-password" placeholder="••••••••" required />
+      </label>
+      <p id="loginError" class="oculto" style="color:var(--rojo);font-size:13px;margin:4px 0 0"></p>
+      <button id="btnEntrar" class="btn primario bloque" type="submit" style="margin-top:14px">Entrar</button>
+    </form>
+  </div>
+
+  <!-- ===== App ===== -->
+  <div id="app" class="app oculto">
+    <aside class="rail">
+      <div class="marca">vendi</div>
+      <nav id="nav" style="display:flex;flex-direction:column;gap:4px"></nav>
+      <div class="espacio"></div>
+      <div id="usuario" class="usuario"></div>
+      <button id="btnSalir" class="btn plano" style="text-align:left">↩ Cerrar sesión</button>
+    </aside>
+
+    <div class="contenido">
+      <header class="cabecera">
+        <div>
+          <h2 id="titulo"></h2>
+          <div id="subtitulo" class="sub"></div>
+        </div>
+        <div class="der" id="accionesCabecera"></div>
+      </header>
+      <section id="vista" class="vista"></section>
+    </div>
+
+    <nav id="tabbar" class="tabbar"></nav>
+  </div>
+
+  <!-- ===== Modal y avisos ===== -->
+  <div id="modal" class="modal oculto"><div class="caja" id="modalCaja"></div></div>
+  <div id="toasts" class="toasts"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
